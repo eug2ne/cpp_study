@@ -1,7 +1,10 @@
-all: compile link
+all: compile link run
 
 compile:
-	clang++ -c <file_name.cpp> -I"/opt/homebrew/Cellar/sfml/2.6.1/include"
+	clang++ -c sfml.cpp -I"/opt/homebrew/Cellar/sfml/2.6.1/include"
 
 link:
-	clang++ <file_name.o> -o <file_name> -L"/opt/homebrew/Cellar/sfml/2.6.1/lib" -lsfml-graphics -lsfml-window -lsfml-system
+	clang++ sfml.o -o sfml -L"/opt/homebrew/Cellar/sfml/2.6.1/lib" -lsfml-graphics -lsfml-window -lsfml-system
+
+run:
+	./sfml
